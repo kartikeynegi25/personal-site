@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="scanlines"></div>
+    <canvas id="matrix-canvas"></canvas>
+
+
+    <!-- navigation bar -->
+    <nav class = "navbar">
+        <div class="logo"> MyPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#silly">Silly Zone</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero / Header Section -->
+     <header class="hero">
+        <h1>Hey, I'm <span class="highlight typing-text"></span><span class="cursor"></span> 👋</h1>
+        <p>A curious mind learning to code, build cool stuff, and explore the web.</p>
+        <a href="#projects" class="btn">Check Out My Work</a>
+     </header>
+
+     <main>
+        <!--Section 1: About Me -->
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="https://github.com/kartikeynegi25.png" alt="My Profile Picture" class="profile-img" />
+                <div class="about-text">
+                    <p>
+                        Welcome to my corner of the internet! I'm currently participating in <strong>Hack Club Stardance</strong>, turning ideas into real world.
+                    </p>
+                    <p>
+                        When I'm not starting at VS Code trying to find a missing bracket,
+                        you can find me exploring music, gaming, or drinking way too much tea.
+                    </p>
+                    <div class="skills">
+                       <span class="badge">HTML5</span>
+                       <span class="badge">CSS3</span>
+                       <span class="badge">JavaScript (Learning)</span>
+                       <span class="badge">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section 2: Projects -->
+        <section id="projects" class ="container bg-alt">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h3>🚀 Standard Personal Portfolio</h3>
+                    <p>My custom website built using HTML and CSS. Features responsive layout, custom styling, and section navigation.</p>
+                    <span class="tech-tag">HTML / CSS</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>🔍 Mystery Project #2</h3>
+                    <p>Work in progress! This will be my next Hack Club Stardance submission. Stay tuned for something intresting.</p>
+                    <span class="tech-tag">Coming Soon</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!--Section 3: Silly Zone -->
+        <section id="silly" class ="container">
+            <h2>🧪 The Silly Zone</h2>
+            <!-- Interactive Terminal -->
+            <div class="terminal-window" onclick="document.getElementById('terminal-input').focus();">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">guest@stardance:~</span>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <p class="term-line">System initialized. Type <span class="term-cmd">'help'</span> to see available commands.</p>
+                </div>
+                <div class="terminal-input-row">
+                        <span class="prompt">$ </span>
+                        <input type="text" id="terminal-input" placeholder="type a command..." autocomplete="off" />
+                </div>
+            </div>
+            <br>
+            <p>Every website needs a little character. Here are 3 fun facts about me:</p>
+            <ul class="fun-list">
+                <li>🍕 Pineapple on pizza is an absolute crime against food and I will not be convinced otherwise.</li>
+                <li>🎧 My coding soundtrack consists of bollywood beats and late-night focus playlists.</li>
+                <li>🐛 I have interest in robotics and software engineering although i am just starting.</li>
+            </ul> 
+            <div class="status-box">
+                <p><strong>Current Mood:</strong> ☕ Fueled by caffeine and CSS bugs</p>
+                <p><strong>Stardance Status:</strong> Hour 2/30 logged</p>
+            </div>
+        </section>
+
+        <!--Section 4: Contact -->
+        <section id="contact" class="container bg-alt text-center">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out if you'd like to collaborate, give feedback, or just say hello?</p>
+            <div class="social-grid">
+                <a href="mailto:negikartikey22@gmail.com" class = "social-card">
+                    <div class="social-icon">@</div>
+                    <div class="social-info">
+                        <span class="social-label">Email</span>
+                        <span class="social-handle">negikartikey22@gmail.com</span>
+                    </div>
+                    <span class="social-arrow">✉</span>
+                </a>
+                <a href="https://www.linkedin.com/in/kartikey-negi-879944380/" target="_blank" class="social-card">
+                    <div class="social-icon">LI</div>
+                    <div class="social-info">
+                        <span class="social-label">LinkedIn</span>
+                        <span class="social-handle">@kartikey-negi</span>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+                <a href="https://github.com/kartikeynegi25" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-icon">GH</div>
+                    <div class="social-info">
+                        <span class="social-label">GitHub</span>
+                        <span class="social-handle">@kartikeynegi25</span>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+            </div>
+        </section>
+     </main>
+
+     <!-- Footer -->
+      <footer>
+        <p>Built with ❤️ by Kartikey during Hack Club Stardance | Powered by HTML, CSS, and a handful of JavaScript</p>
+      </footer>
+
+
+<!-- Inline script for Glowing Effect -->
+<script>
+    const nameText = "[Kartikey]";
+    const typingElement = document.querySelector('.typing-text');
+    let index = 0;
+
+    function typeWriter() {
+        if (index < nameText.length) {
+            typingElement.textContent += nameText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 120);
+        }
+    }
+
+    window.onload = typeWriter;
+
+    // Interactive Termial Commands
+    const termInput = document.getElementById('terminal-input');
+    const termOutput = document.getElementById('terminal-output');
+
+    const commands = {
+        help: `Available commands:<br>
+            • <span class='term-cmd'>about</span> - Learn about my Stardance journey<br>
+            • <span class='term-cmd'>skills</span> - Tech stack breakdown<br>
+            • <span class='term-cmd'>projects</span> - Quick project overview<br>
+            • <span class='term-cmd'>matrix</span> - Toggle Matrix Rain opacity<br>
+            • <span class='term-cmd'>sudo</span> - Superuser privilege test<br>
+            • <span class='term-cmd'>date</span> - Display current local time<br>
+            • <span class='term-cmd'>clear</span> - Reset terminal screen`,
+        about: "I'm a curious mind learning to code and build cool stuff for Hack Club Stardance!",
+        skills: "HTML5 | CSS3 | JavaScript | Git & GitHub. I'm also learning C++.",
+        clear: "Clearing terminal...",
+        secret: "🎉 You found the secret! Stardance achievement unlocked",
+        projects: "1. Stardance Personal Portfolio (Live)<br>2. Mystery Project, something cool is coming.. (In Progress)",
+
+        sudo: () => {
+            playErrorSound();
+            return "<span style='color:#ff5f56;'>Permission denied: User is not in the sudoers file. This incident will be reported.</span>";
+        },
+
+        date: () => {
+            return `System Time: ${new Date().toLocaleString()}`;
+        },
+
+        matrix: () => {
+            const canvas = document.getElementById('matrix-canvas');
+            if (canvas.style.opacity === '0') {
+                canvas.style.opacity = '0.15';
+                return "Matrix Rain: <span style='color:#00ff66'>ENABLED</span>";
+            } else {
+            canvas.style.opacity = '0';
+            return "Matrix Rain: <span style='color:#ff5f56'>DISABLED</span>";
+            }
+        }
+    };
+
+    termInput.addEventListener('keydown', function(e) {
+  // Play subtle keypress sound on every character
+  if (e.key.length === 1 || e.key === 'Backspace') {
+    playKeyClick();
+  }
+
+  if (e.key === 'Enter') {
+    const input = this.value.trim().toLowerCase();
+    this.value = '';
+
+    if (input === 'clear') {
+      termOutput.innerHTML = '<p class="term-line">Terminal cleared. Type <span class="term-cmd">\'help\'</span> for commands.</p>';
+      return;
+    }
+
+    const userLine = document.createElement('p');
+    userLine.className = 'term-line';
+    userLine.innerHTML = `<span class="prompt">$</span> ${input}`;
+    termOutput.appendChild(userLine);
+
+    const responseLine = document.createElement('p');
+    responseLine.className = 'term-line';
+
+    if (commands[input]) {
+      // Run custom function if command maps to one
+      if (typeof commands[input] === 'function') {
+        responseLine.innerHTML = commands[input]();
+      } else {
+        responseLine.innerHTML = commands[input];
+      }
+    } else if (input !== '') {
+      playErrorSound(); // Play error tone on invalid command
+      responseLine.innerHTML = `Command not recognized: '<span style="color:#ff5f56">${input}</span>'. Type <span class="term-cmd">'help'</span>.`;
+    }
+
+    if (input !== '') {
+      termOutput.appendChild(responseLine);
+      termOutput.scrollTop = termOutput.scrollHeight;
+    }
+  }
+});
+
+    // Matrix Rain Effect
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-/<=>?@';
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    function drawMatrix() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#00ff66';
+        ctx.font = `${fontSize}px monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = chars.charAt(Math.floor(Math.random() * chars.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+
+    setInterval(drawMatrix, 33);
+
+    // --- Retro Sound Synthesizer ---
+const AudioCtx = window.AudioContext || window.webkitAudioContext;
+let audioCtx;
+
+function initAudio() {
+  if (!audioCtx) {
+    audioCtx = new AudioCtx();
+  }
+}
+
+// Mechanical Keyclick Sound
+function playKeyClick() {
+  initAudio();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  // Short, high-pitched click
+  osc.type = 'square';
+  osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.03);
+
+  gain.gain.setValueAtTime(0.05, audioCtx.currentTime); // Low volume so it isn't jarring
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.03);
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.03);
+}
+
+// Terminal Error Sound
+function playErrorSound() {
+  initAudio();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  osc.type = 'sawtooth';
+  osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+  
+  gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.15);
+}
+</script>
+    </body>
+</html>
