@@ -1,6 +1,6 @@
 # ⚡ My Personal Terminal Portfolio
 
-Hey! 👋 This is my personal portfolio website built for **Hack Club Stardance**. 
+Hey! 👋 This is my personal portfolio website. 
 
 Instead of a standard boring website, I decided to build a retro, dark-themed hacker terminal from scratch using **pure HTML, CSS, and Vanilla JavaScript**.
 
