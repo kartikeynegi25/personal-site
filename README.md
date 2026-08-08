@@ -31,3 +31,17 @@ Instead of a standard boring website, I decided to build a retro, dark-themed ha
 1. Clone this repo:
    ```bash
    git clone https://github.com/kartikeynegi25/personal-site.git
+
+
+ ## 🤖 AI Usage Declaration
+
+**Tools Used:** Gemini 3.1 / ChatGPT
+
+### Usage & Workflow:
+- **Code Assistance & Syntax:** Used AI as a coding assistant to speed up writing standard HTML boilerplates, CSS utility classes, and initial layout logic.
+- **Problem Solving:** Prompted AI for suggestions when debugging specific UI edge cases, complex layout alignments, and DOM filter logic.
+
+### Core Development & Execution:
+- Handled all project setup, architecture, page structure, and design decisions.
+- Reviewed, modified, and directly wrote/edited the codebase to fit the project's exact requirements.
+- Configured version control, managed Git commits, and handled deployment.
